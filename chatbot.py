@@ -45,14 +45,14 @@ if "initial_prompt" not in st.session_state:
     st.session_state.initial_prompt = load_initial_prompt("prompts/initial_prompt.txt")
 
 # Mensaje de bienvenida
-welcome_message = "¡Hola! Soy un chatbot amigable. ¿En qué puedo ayudarte?"
+welcome_message = "Hola, ¿cómo puedo ayudarte?"
 
 # Inicializar el historial del chat en la sesión (si no existe)
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": welcome_message}]
 
 # Interfaz de Streamlit
-st.title("Chatbot con OpenAI (Completion API)")
+st.title("Asistente Virtual Interesse")
 
 # Mostrar los mensajes del chat existentes
 for message in st.session_state.messages:
