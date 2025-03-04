@@ -40,15 +40,19 @@ def get_completion(prompt, model="gpt-3.5-turbo"):  # Ajusta el modelo si lo des
         return "Lo siento, hubo un problema al obtener la respuesta del modelo."
 
 
-# Cargar el prompt inicial
-initial_prompt = load_initial_prompt("prompts/initial_prompt.txt")
+# Cargar el prompt inicial y almacenarlo en st.session_state
+if "initial_prompt" not in st.session_state:
+    st.session_state.initial_prompt = load_initial_prompt("prompts/initial_prompt.txt")
 
-# Interfaz de Streamlit
-st.title("Chatbot con OpenAI (Completion API)")
+# Mensaje de bienvenida
+welcome_message = "¡Hola! Soy un chatbot amigable. ¿En qué puedo ayudarte?"
 
 # Inicializar el historial del chat en la sesión (si no existe)
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "assistant", "content": initial_prompt}]
+    st.session_state.messages = [{"role": "assistant", "content": welcome_message}]
+
+# Interfaz de Streamlit
+st.title("Chatbot con OpenAI (Completion API)")
 
 # Mostrar los mensajes del chat existentes
 for message in st.session_state.messages:
@@ -63,7 +67,7 @@ if prompt := st.chat_input("Escribe tu mensaje aquí..."):
         st.markdown(prompt)
 
     # Construir el prompt completo para el modelo
-    full_prompt = f"{initial_prompt}\nUsuario: {prompt}\nChatbot:"
+    full_prompt = f"{st.session_state.initial_prompt}\nUsuario: {prompt}\nChatbot:"
 
     # Obtener la respuesta del modelo
     with st.spinner("Esperando respuesta del modelo..."):
