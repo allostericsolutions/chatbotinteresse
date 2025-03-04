@@ -33,7 +33,7 @@ def get_completion(prompt, model="gpt-4o-mini", max_tokens=12000):  # Modelo y m
             model=model,
             messages=messages,
             temperature=0.2,
-            max_tokens=max_tokens, 12000# Especifica la longitud máxima de la respuesta
+            max_tokens=max_tokens,  # Especifica la longitud máxima de la respuesta
         )
         return response.choices[0].message.content
     except Exception as e:
