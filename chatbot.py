@@ -26,13 +26,14 @@ def load_initial_prompt(filepath):
 
 
 # Función para obtener la respuesta del modelo (Completion API)
-def get_completion(prompt, model="gpt-3.5-turbo"):  # Ajusta el modelo si lo deseas
+def get_completion(prompt, model="gpt-4o-mini", max_tokens=12000):  # Modelo y max_tokens como parámetros
     try:
         messages = [{"role": "user", "content": prompt}]
         response = openai.chat.completions.create(
             model=model,
             messages=messages,
-            temperature=0.7,  # Ajusta la temperatura para controlar la aleatoriedad
+            temperature=0.2,
+            max_tokens=max_tokens, 12000# Especifica la longitud máxima de la respuesta
         )
         return response.choices[0].message.content
     except Exception as e:
