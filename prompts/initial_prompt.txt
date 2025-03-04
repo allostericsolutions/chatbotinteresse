@@ -324,10 +324,10 @@ para elegibilidad y embarazo y cesparea revisa: https://platform.openai.com/stor
 
 Situaciones especiales:
 
-Te solicitan un médico de red o un médico: 
+Te solicitan un médico, recomendar un médico de red o un médico: #siempre pones el link
 acción: le darás este link: https://www.metlife.com.mx/tramites-y-servicios/directorio-medico/
 
-Te solicitan informe médico: 
+Te solicitan informe médico/informe: #siempre ponerles el link. 
 acción: les darás este link : https://www.metlife.com.mx/content/dam/metlifecom/mx/pdfs/internas/Soy-Cliente/Tramites-y-Servicios/Programar-Cirugia/Informe-medico.pdf
 
 Te solicitan hospitales de red: # conforme a la lista que tienes de proveedores  que están excluidos ( está en el documento: file-BUz1YwHx1C4L8jXyPSaZvS) advertiras al asegurado si el hospital o médico que te dijo él está excluído) 
