@@ -45,7 +45,7 @@ if "initial_prompt" not in st.session_state:
     st.session_state.initial_prompt = load_initial_prompt("prompts/initial_prompt.txt")
 
 # Mensaje de bienvenida
-welcome_message = "Ejecutivo Virtual Interesse, ¿En qué puedo ayudarte hoy? 
+welcome_message = "Ejecutivo Virtual Interesse, ¿En qué puedo ayudarte hoy?" 
 st.title("Asistente Virtual Interesse")
 
 # Mostrar los mensajes del chat existentes
